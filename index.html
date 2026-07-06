@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BBWsinglesfan</title>
+
+<style>
+html,body{
+    margin:0;
+    padding:0;
+    background:#000;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    overflow-x:hidden;
+}
+
+.page{
+    width:100%;
+    max-width:480px;
+    margin:auto;
+    background:#000;
+}
+
+.video-box{
+    width:100%;
+    background:#000;
+}
+
+video{
+    width:100%;
+    max-height:75vh;
+    display:block;
+    object-fit:contain;
+    background:#000;
+}
+
+.rec-title{
+    color:#fff;
+    font-size:16px;
+    font-weight:600;
+    padding:16px 15px 8px;
+}
+
+.banner-300,
+.native-wrap,
+.smartlink{
+    display:flex;
+    justify-content:center;
+}
+
+.banner-300{
+    padding:15px 0;
+}
+
+.native-wrap{
+    padding:10px 0 20px;
+}
+
+.smartlink{
+    padding:0 15px 30px;
+}
+
+.smartlink a{
+    width:100%;
+    max-width:300px;
+    text-align:center;
+    text-decoration:none;
+    color:#fff;
+    background:#ff3b30;
+    padding:14px;
+    border-radius:10px;
+    font-weight:bold;
+    transition:.25s;
+}
+
+.smartlink a:hover{
+    background:#ff5548;
+}
+
+#error{
+    color:#fff;
+    text-align:center;
+    padding:15px;
+    display:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+<div class="video-box">
+
+<video
+id="player"
+controls
+autoplay
+muted
+playsinline
+preload="auto"
+poster="https://via.placeholder.com/480x720?text=Loading..."
+controlsList="nodownload noremoteplayback"
+disablePictureInPicture>
+
+<source id="videoSource" src="" type="video/mp4">
+
+Browser Anda tidak mendukung video.
+
+</video>
+
+<div id="error">
+Video gagal dimuat.
+</div>
+
+</div>
+
+<div class="rec-title">
+🔥 Trending Videos
+</div>
+
+<!-- Banner -->
+<div class="banner-300">
+
+<script>
+atOptions={
+'key':'b3a0a1af6d7d4ee79a75aba43a97e0fb',
+'format':'iframe',
+'height':250,
+'width':300,
+'params':{}
+};
+</script>
+
+<script src="https://brewdismaychest.com/b3a0a1af6d7d4ee79a75aba43a97e0fb/invoke.js"></script>
+
+</div>
+
+<!-- Native -->
+
+<div class="native-wrap">
+
+<script async data-cfasync="false" src="https://brewdismaychest.com/200138cb98041e918b93cbf8e0cc96cf/invoke.js"></script>
+
+<div id="container-200138cb98041e918b93cbf8e0cc96cf"></div>
+
+</div>
+
+<!-- Smartlink -->
+
+<div class="smartlink">
+
+<a href="https://brewdismaychest.com/f15476crh?key=76fb9dce7ef0fc7b5fd6f54f4f1a952b" target="_blank" rel="noopener noreferrer">
+
+▶ Watch More Videos
+
+</a>
+
+</div>
+
+</div>
+
+<script>
+
+(function(){
+
+const params=new URLSearchParams(window.location.search);
+
+let video=params.get("v");
+
+// Default video
+const defaultVideo="https://cdn.videy.co/k84OOz1w1.mp4";
+
+if(video){
+
+    if(!video.startsWith("http")){
+
+        if(!video.endsWith(".mp4")){
+            video+=".mp4";
+        }
+
+        video="https://cdn.videy.co/"+video;
+
+    }
+
+}else{
+
+    video=defaultVideo;
+
+}
+
+const player=document.getElementById("player");
+const source=document.getElementById("videoSource");
+const error=document.getElementById("error");
+
+source.src=video;
+
+player.load();
+
+player.addEventListener("loadedmetadata",function(){
+
+    player.play().catch(()=>{});
+
+});
+
+player.addEventListener("error",function(){
+
+    error.style.display="block";
+    console.log("Video gagal dimuat:",video);
+
+});
+
+player.addEventListener("contextmenu",function(e){
+
+    e.preventDefault();
+
+});
+
+console.log("Video:",video);
+
+})();
+
+</script>
+
+</body>
+</html>
