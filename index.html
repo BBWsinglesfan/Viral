@@ -3,221 +3,119 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BBWsinglesfan</title>
+<title>⭐zaynith-flow⭐</title>
 
 <style>
-html,body{
-    margin:0;
-    padding:0;
-    background:#000;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-    overflow-x:hidden;
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  user-select: none;
 }
 
-.page{
-    width:100%;
-    max-width:480px;
-    margin:auto;
-    background:#000;
+.page {
+  width: 100%;
+  background: #000;
 }
 
-.video-box{
-    width:100%;
-    background:#000;
+/* Banner wrapper */
+.banner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 12px 0;
+  background: #000;
 }
 
-video{
-    width:100%;
-    max-height:75vh;
-    display:block;
-    object-fit:contain;
-    background:#000;
+.video-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: #000;
 }
 
-.rec-title{
-    color:#fff;
-    font-size:16px;
-    font-weight:600;
-    padding:16px 15px 8px;
+video {
+  width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+  background: #000;
+  pointer-events: auto;
 }
 
-.banner-300,
-.native-wrap,
-.smartlink{
-    display:flex;
-    justify-content:center;
-}
-
-.banner-300{
-    padding:15px 0;
-}
-
-.native-wrap{
-    padding:10px 0 20px;
-}
-
-.smartlink{
-    padding:0 15px 30px;
-}
-
-.smartlink a{
-    width:100%;
-    max-width:300px;
-    text-align:center;
-    text-decoration:none;
-    color:#fff;
-    background:#ff3b30;
-    padding:14px;
-    border-radius:10px;
-    font-weight:bold;
-    transition:.25s;
-}
-
-.smartlink a:hover{
-    background:#ff5548;
-}
-
-#error{
-    color:#fff;
-    text-align:center;
-    padding:15px;
-    display:none;
+* {
+  -webkit-tap-highlight-color: transparent;
 }
 </style>
 </head>
 
-<body>
+<body oncontextmenu="return false">
 
 <div class="page">
 
-<div class="video-box">
+  <!-- VIDEO -->
+  <div class="video-box">
+    <video id="player"
+      controls
+      autoplay
+      playsinline
+      preload="metadata"
+      controlslist="nodownload nofullscreen noremoteplayback"
+      disablepictureinpicture
+      ondragstart="return false"
+    >
+      <source id="videoSource" src="" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
 
-<video
-id="player"
-controls
-autoplay
-muted
-playsinline
-preload="auto"
-poster="https://via.placeholder.com/480x720?text=Loading..."
-controlsList="nodownload noremoteplayback"
-disablePictureInPicture>
-
-<source id="videoSource" src="" type="video/mp4">
-
-Browser Anda tidak mendukung video.
-
-</video>
-
-<div id="error">
-Video gagal dimuat.
+  <!-- BANNER BOTTOM 300x250 -->
+<div class="banner">
+  <script>
+    atOptions = {
+      'key' : 'a743a8fdc6a70166b6925c48ee7982fb',
+      'format' : 'iframe',
+      'height' : 250,
+      'width' : 300,
+      'params' : {}
+    };
+  </script>
+  <script src="https://brewdismaychest.com/a743a8fdc6a70166b6925c48ee7982fb/invoke.js"></script>
 </div>
 
 </div>
 
-<div class="rec-title">
-🔥 Trending Videos
-</div>
-
-<!-- Banner -->
-<div class="banner-300">
-
+<!-- AUTO LOAD VIDEO DARI PARAMETER ?v= -->
 <script>
-  atOptions = {
-    'key' : 'a743a8fdc6a70166b6925c48ee7982fb',
-    'format' : 'iframe',
-    'height' : 250,
-    'width' : 300,
-    'params' : {}
-  };
-</script>
-<script src="https://brewdismaychest.com/a743a8fdc6a70166b6925c48ee7982fb/invoke.js"></script>
+(function () {
+  const params = new URLSearchParams(window.location.search);
+  let video = params.get("v");
 
-</div>
-
-<!-- Native -->
-
-<div class="native-wrap">
-
-<script async data-cfasync="false" src="https://brewdismaychest.com/a2938aa146e7da6775335704866d2e36/invoke.js"></script>
-<div id="container-a2938aa146e7da6775335704866d2e36"></div>
-
-</div>
-
-<!-- Smartlink -->
-
-<div class="smartlink">
-
-<a href="https://brewdismaychest.com/n7g6w0er?key=5966fb7920adc19e4a887f80c3962b8e" target="_blank" rel="noopener noreferrer">
-
-▶ Watch More Videos
-
-</a>
-
-</div>
-
-</div>
-
-<script>
-
-(function(){
-
-const params=new URLSearchParams(window.location.search);
-
-let video=params.get("v");
-
-// Default video
-const defaultVideo="https://cdn.videy.co/k84OOz1w1.mp4";
-
-if(video){
-
-    if(!video.startsWith("http")){
-
-        if(!video.endsWith(".mp4")){
-            video+=".mp4";
-        }
-
-        video="https://cdn.videy.co/"+video;
-
+  if (video) {
+    if (!video.startsWith("http")) {
+      video = "https://cdn.videy.co/" + video;
     }
+    document.getElementById("videoSource").src = video;
+  } else {
+    document.getElementById("videoSource").src = "https://cdn.videy.co/HAZ79zvC1.mp4";
+  }
 
-}else{
-
-    video=defaultVideo;
-
-}
-
-const player=document.getElementById("player");
-const source=document.getElementById("videoSource");
-const error=document.getElementById("error");
-
-source.src=video;
-
-player.load();
-
-player.addEventListener("loadedmetadata",function(){
-
-    player.play().catch(()=>{});
-
-});
-
-player.addEventListener("error",function(){
-
-    error.style.display="block";
-    console.log("Video gagal dimuat:",video);
-
-});
-
-player.addEventListener("contextmenu",function(e){
-
-    e.preventDefault();
-
-});
-
-console.log("Video:",video);
-
+  document.getElementById("player").load();
 })();
+</script>
 
+<!-- PROTEKSI BASIC -->
+<script>
+(function () {
+  document.addEventListener("contextmenu", e => e.preventDefault());
+  document.addEventListener("dragstart", e => e.preventDefault());
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "F12") e.preventDefault();
+    if (e.ctrlKey && e.shiftKey && ["I","J","C"].includes(e.key.toUpperCase())) e.preventDefault();
+    if (e.ctrlKey && ["U","S","P"].includes(e.key.toUpperCase())) e.preventDefault();
+  });
+})();
 </script>
 
 </body>
