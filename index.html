@@ -1,79 +1,169 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>⭐zaynith-flow⭐</title>
+
+<title>⭐ zaynithflow ⭐</title>
 
 <style>
-html, body {
-  margin: 0;
-  padding: 0;
-  background: #000;
-  font-family: Arial, Helvetica, sans-serif;
-  user-select: none;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-.page {
-  width: 100%;
-  background: #000;
+body{
+background:#000;
+color:#fff;
+font-family:Arial,Helvetica,sans-serif;
+overflow-x:hidden;
 }
 
-/* Banner wrapper */
-.banner {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 12px 0;
-  background: #000;
+.page{
+max-width:480px;
+margin:auto;
+background:#000;
 }
 
-.video-box {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  background: #000;
+/* Header */
+
+.hero{
+padding:20px 15px 15px;
+text-align:center;
 }
 
-video {
-  width: 100%;
-  max-height: 78vh;
-  object-fit: contain;
-  background: #000;
-  pointer-events: auto;
+.hero h1{
+font-size:30px;
+font-weight:900;
+line-height:1.1;
+letter-spacing:1px;
+text-transform:uppercase;
+color:#fff;
+text-shadow:0 0 15px rgba(255,255,255,.3);
 }
 
-* {
-  -webkit-tap-highlight-color: transparent;
+.hero h1 span{
+display:block;
+font-size:42px;
+margin-top:6px;
+background:linear-gradient(90deg,#62d4ff,#008cff,#6be8ff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+margin-top:12px;
+font-size:15px;
+line-height:1.6;
+color:#cfcfcf;
+}
+
+/* Video */
+
+.video-box{
+padding:0 10px;
+}
+
+video{
+width:100%;
+display:block;
+background:#000;
+border-radius:12px;
+object-fit:contain;
+max-height:65vh;
+}
+
+/* Button */
+
+.btn-area{
+padding:15px;
+}
+
+.watch-btn{
+display:block;
+text-decoration:none;
+text-align:center;
+padding:16px;
+font-size:19px;
+font-weight:bold;
+color:#fff;
+border-radius:12px;
+background:linear-gradient(135deg,#38b6ff,#005dff);
+box-shadow:0 0 20px rgba(0,140,255,.45);
+transition:.25s;
+}
+
+.watch-btn:hover{
+transform:translateY(-2px);
+box-shadow:0 0 30px rgba(0,140,255,.8);
+}
+
+/* Banner */
+
+.banner{
+display:flex;
+justify-content:center;
+padding:5px 0 18px;
 }
 </style>
-</head>
 
-<body oncontextmenu="return false">
+</head>
+<body>
 
 <div class="page">
 
-  <!-- VIDEO -->
-  <div class="video-box">
-    <video id="player"
-      controls
-      autoplay
-      playsinline
-      preload="metadata"
-      controlslist="nodownload nofullscreen noremoteplayback"
-      disablepictureinpicture
-      ondragstart="return false"
-    >
-      <source id="videoSource" src="" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
+<div class="hero">
 
-  <!-- BANNER BOTTOM 320x50 -->
-  <div class="banner">
-    <script>
+<h1>
+WELCOME TO
+<span>zaynithflow</span>
+</h1>
+
+<p>
+🔥 The funniest memes, viral videos, crazy moments and trending internet content are waiting for you.
+<br><br>
+👇 Watch today's featured clip below and join thousands of fans for daily updates.
+</p>
+
+</div>
+
+<div class="video-box">
+
+<video
+id="player"
+controls
+autoplay
+playsinline
+preload="metadata"
+poster="https://i.imgur.com/2OgfobS.jpeg"
+controlslist="nodownload nofullscreen noremoteplayback"
+disablepictureinpicture>
+
+<source id="videoSource" src="" type="video/mp4">
+
+</video>
+
+</div>
+
+<div class="btn-area">
+
+<a
+class="watch-btn"
+href="https://zealoushavoc.com/n7g6w0er?key=5966fb7920adc19e4a887f80c3962b8e"
+target="_blank"
+rel="noopener">
+
+▶ Full Vid 💙
+
+</a>
+
+</div>
+
+<div class="banner">
+
+<script>
   atOptions = {
     'key' : '19897b56b85da2ef8405fd695ea779a8',
     'format' : 'iframe',
@@ -82,41 +172,41 @@ video {
     'params' : {}
   };
 </script>
-<script src="https://brewdismaychest.com/19897b56b85da2ef8405fd695ea779a8/invoke.js"></script>
-  </div>
+<script src='https://zealoushavoc.com/19897b56b85da2ef8405fd695ea779a8/invoke.js'></script>
 
 </div>
 
-<!-- AUTO LOAD VIDEO DARI PARAMETER ?v= -->
+</div>
+
 <script>
-(function () {
-  const params = new URLSearchParams(window.location.search);
-  let video = params.get("v");
+(()=>{
+const p=new URLSearchParams(location.search);
+let v=p.get("v");
 
-  if (video) {
-    if (!video.startsWith("http")) {
-      video = "https://cdn.videy.co/" + video;
-    }
-    document.getElementById("videoSource").src = video;
-  } else {
-    document.getElementById("videoSource").src = "https://cdn.videy.co/HAZ79zvC1.mp4";
-  }
+if(v){
+if(!v.startsWith("http")){
+v="https://cdn.videy.co/"+v;
+}
+}else{
+v="https://cdn.videy.co/HAZ79zvC1.mp4";
+}
 
-  document.getElementById("player").load();
+document.getElementById("videoSource").src=v;
+document.getElementById("player").load();
 })();
 </script>
 
-<!-- PROTEKSI BASIC -->
 <script>
-(function () {
-  document.addEventListener("contextmenu", e => e.preventDefault());
-  document.addEventListener("dragstart", e => e.preventDefault());
+var _Hasync=_Hasync||[];
+_Hasync.push(['Histats.start', '1,5040661,4,9,110,60,00011111']);
+_Hasync.push(['Histats.fasi','1']);
+_Hasync.push(['Histats.track_hits','']);
 
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "F12") e.preventDefault();
-    if (e.ctrlKey && e.shiftKey && ["I","J","C"].includes(e.key.toUpperCase())) e.preventDefault();
-    if (e.ctrlKey && ["U","S","P"].includes(e.key.toUpperCase())) e.preventDefault();
-  });
+(function(){
+var s=document.createElement('script');
+s.async=true;
+s.src='//s10.histats.com/js15_as.js';
+document.body.appendChild(s);
 })();
 </script>
 
