@@ -1,212 +1,138 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>⭐ zaynithflow ⭐</title>
+<title>Aftervibemedia New</title>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  overflow-x: hidden;
 }
 
-body{
-background:#000;
-color:#fff;
-font-family:Arial,Helvetica,sans-serif;
-overflow-x:hidden;
+.page {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  background: #000;
 }
 
-.page{
-max-width:480px;
-margin:auto;
-background:#000;
+.video-box {
+  width: 100%;
 }
 
-/* Header */
-
-.hero{
-padding:20px 15px 15px;
-text-align:center;
+video {
+  width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  display: block;
+  background: #000;
 }
 
-.hero h1{
-font-size:30px;
-font-weight:900;
-line-height:1.1;
-letter-spacing:1px;
-text-transform:uppercase;
-color:#fff;
-text-shadow:0 0 15px rgba(255,255,255,.3);
+video::-webkit-media-controls-fullscreen-button {
+  display: none !important;
 }
 
-.hero h1 span{
-display:block;
-font-size:42px;
-margin-top:6px;
-background:linear-gradient(90deg,#62d4ff,#008cff,#6be8ff);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+video::-webkit-media-controls-overflow-button {
+  display: none !important;
 }
 
-.hero p{
-margin-top:12px;
-font-size:15px;
-line-height:1.6;
-color:#cfcfcf;
+.rec-title {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 16px 15px 6px;
 }
 
-/* Video */
-
-.video-box{
-padding:0 10px;
+.banner-300 {
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
 }
 
-video{
-width:100%;
-display:block;
-background:#000;
-border-radius:12px;
-object-fit:contain;
-max-height:65vh;
-}
-
-/* Button */
-
-.btn-area{
-padding:15px;
-}
-
-.watch-btn{
-display:block;
-text-decoration:none;
-text-align:center;
-padding:16px;
-font-size:19px;
-font-weight:bold;
-color:#fff;
-border-radius:12px;
-background:linear-gradient(135deg,#38b6ff,#005dff);
-box-shadow:0 0 20px rgba(0,140,255,.45);
-transition:.25s;
-}
-
-.watch-btn:hover{
-transform:translateY(-2px);
-box-shadow:0 0 30px rgba(0,140,255,.8);
-}
-
-/* Banner */
-
-.banner{
-display:flex;
-justify-content:center;
-padding:5px 0 18px;
+.native-wrap {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30px;
 }
 </style>
-
 </head>
+
 <body>
 
 <div class="page">
 
-<div class="hero">
+  <!-- VIDEO -->
+  <div class="video-box">
+    <video
+      id="player"
+      controls
+      autoplay
+      muted
+      playsinline
+      preload="metadata"
+      poster="https://via.placeholder.com/480x720?text=Loading..."
+      controlsList="nodownload noremoteplayback"
+      disablePictureInPicture
+    >
+      <source id="videoSource" src="" type="video/mp4">
+    </video>
+  </div>
 
-<h1>
-WELCOME TO
-<span>zaynithflow</span>
-</h1>
+  <div class="rec-title">
+    🔥 Trending Videos
+  </div>
 
-<p>
-🔥 The funniest memes, viral videos, crazy moments and trending internet content are waiting for you.
-<br><br>
-👇 Watch today's featured clip below and join thousands of fans for daily updates.
-</p>
-
-</div>
-
-<div class="video-box">
-
-<video
-id="player"
-controls
-autoplay
-playsinline
-preload="metadata"
-poster="https://i.imgur.com/2OgfobS.jpeg"
-controlslist="nodownload nofullscreen noremoteplayback"
-disablepictureinpicture>
-
-<source id="videoSource" src="" type="video/mp4">
-
-</video>
-
-</div>
-
-<div class="btn-area">
-
-<a
-class="watch-btn"
-href="https://zealoushavoc.com/n7g6w0er?key=5966fb7920adc19e4a887f80c3962b8e"
-target="_blank"
-rel="noopener">
-
-▶ Full Vid 💙
-
-</a>
-
-</div>
-
-<div class="banner">
-
-<script>
+  <!-- ✅ BANNER 300x250 -->
+  <div class="banner-300">
+    <script>
   atOptions = {
-    'key' : '19897b56b85da2ef8405fd695ea779a8',
+    'key' : 'b3a0a1af6d7d4ee79a75aba43a97e0fb',
     'format' : 'iframe',
-    'height' : 50,
-    'width' : 320,
+    'height' : 250,
+    'width' : 300,
     'params' : {}
   };
 </script>
-<script src='https://zealoushavoc.com/19897b56b85da2ef8405fd695ea779a8/invoke.js'></script>
+<script src="https://zealoushavoc.com/b3a0a1af6d7d4ee79a75aba43a97e0fb/invoke.js"></script>
+  </div>
 
-</div>
+  <!-- ✅ NATIVE BANNER -->
+  <div class="native-wrap">
+    <script async="async" data-cfasync="false" src="https://zealoushavoc.com/200138cb98041e918b93cbf8e0cc96cf/invoke.js"></script>
+<div id="container-200138cb98041e918b93cbf8e0cc96cf"></div>
+  </div>
 
 </div>
 
 <script>
-(()=>{
-const p=new URLSearchParams(location.search);
-let v=p.get("v");
+(function () {
 
-if(v){
-if(!v.startsWith("http")){
-v="https://cdn.videy.co/"+v;
+const params = new URLSearchParams(window.location.search);
+let video = params.get("v");
+
+if (video) {
+  if (!video.startsWith("http")) {
+    video = "https://cdn.videy.co/" + video;
+  }
+} else {
+  video = "https://cdn.videy.co/k84OOz1w1.mp4";
 }
-}else{
-v="https://cdn.videy.co/HAZ79zvC1.mp4";
-}
 
-document.getElementById("videoSource").src=v;
-document.getElementById("player").load();
-})();
-</script>
+const player = document.getElementById("player");
+const source = document.getElementById("videoSource");
 
-<script>
-var _Hasync=_Hasync||[];
-_Hasync.push(['Histats.start', '1,5040661,4,9,110,60,00011111']);
-_Hasync.push(['Histats.fasi','1']);
-_Hasync.push(['Histats.track_hits','']);
+source.src = video;
+player.load();
 
-(function(){
-var s=document.createElement('script');
-s.async=true;
-s.src='//s10.histats.com/js15_as.js';
-document.body.appendChild(s);
+// Anti klik kanan
+player.addEventListener("contextmenu", e => e.preventDefault());
+
 })();
 </script>
 
