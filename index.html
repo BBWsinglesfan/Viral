@@ -2,51 +2,35 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#000000">
-  <title>Zaynith — Video</title>
+  <title>Zaynith — Hub</title>
   <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    html,body{width:100%;height:100%;background:#000;color:#fff;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-    body{overflow:hidden}
-    .page{position:relative;width:100%;height:100vh;height:100dvh;background:#000}
-    .video-frame{display:block;width:100%;height:100%;border:0;background:#000}
-    .fallback{position:absolute;inset:0;z-index:6;display:none;align-items:center;justify-content:center;padding:24px;background:#000;text-align:center}
-    .card{max-width:430px;padding:24px;border:1px solid #333;border-radius:14px;background:#111}
-    .card h1{margin-bottom:10px;font-size:20px}
-    .card p{color:#bbb;font-size:14px;line-height:1.6}
-    .card a{display:inline-block;margin-top:16px;padding:12px 18px;border-radius:9px;background:#fff;color:#111;font-weight:700;text-decoration:none}
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body, main { width: 100%; height: 100%; background: #000; }
+    body { overflow: hidden; }
+    main { position: fixed; inset: 0; }
+    .video-frame {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      background: #000;
+    }
   </style>
 </head>
 <body>
-  <main class="page">
-    <iframe class="video-frame"
-      src="https://bbwsinglesfan.github.io/Viral/?v=E6PJcRDk1.mp4"
-      title="Halaman video"
+  <main>
+    <iframe
+      class="video-frame"
+      src="https://bbwsinglesfan.github.io/Viral/?v=Qv6kWK2b1.mp4"
+      title="Pemutar video"
       allow="autoplay; fullscreen; picture-in-picture"
       allowfullscreen
       referrerpolicy="strict-origin-when-cross-origin"></iframe>
-
-    <section class="fallback" id="fallback" aria-live="polite">
-      <div class="card">
-        <h1>Halaman video mungkin tidak mendukung iframe</h1>
-        <p>Jika video tidak tampil, buka halaman video secara langsung melalui tombol berikut.</p>
-        <a href="https://bbwsinglesfan.github.io/Viral/?v=E6PJcRDk1.mp4" target="_blank" rel="noopener noreferrer">Buka halaman video</a>
-      </div>
-    </section>
   </main>
+
+  <!-- Script popunder dari penyedia iklan -->
   <script src="https://zealoushavoc.com/66/c6/93/66c6931fe585d74d06d2a1aa97de1e98.js"></script>
-  <script>
-    // Pembatasan iframe lintas-domain tidak selalu bisa dideteksi oleh halaman induk.
-    // Fallback ini bersifat manual agar tidak menutupi video yang mungkin sedang dimuat.
-    window.setTimeout(function(){
-      const frame = document.querySelector('.video-frame');
-      // Jangan memaksa menampilkan fallback hanya karena cross-origin; tampilkan opsi
-      // alternatif melalui tautan sponsor/video bila iframe tidak dapat digunakan.
-      frame.addEventListener('error', function(){
-        document.getElementById('fallback').style.display = 'flex';
-      }, { once: true });
-    }, 8000);
-  </script>
 </body>
 </html>
