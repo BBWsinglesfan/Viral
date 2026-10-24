@@ -1,137 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>zaynithflow01</title>
-
-  <!-- POPUNDER AD SCRIPT -->
-  <script src="https://zealoushavoc.com/66/c6/93/66c6931fe585d74d06d2a1aa97de1e98.js"></script>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <title>Zaynith</title>
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: #000;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      overflow-x: hidden;
-    }
-
-    .page {
-      width: 100%;
-      max-width: 480px;
-      margin: 0 auto;
-      background: #000;
-    }
-
-    .video-box {
-      width: 100%;
-    }
-
-    video {
-      width: 100%;
-      max-height: 75vh;
-      object-fit: contain;
-      display: block;
-      background: #000;
-    }
-
-    video::-webkit-media-controls-fullscreen-button,
-    video::-webkit-media-controls-overflow-button {
-      display: none !important;
-    }
-
-    .rec-title {
-      color: #fff;
-      font-size: 16px;
-      font-weight: 600;
-      padding: 16px 15px 6px;
-    }
-
-    .banner-300 {
-      display: flex;
-      justify-content: center;
-      padding: 15px 0;
-    }
-
-    .native-wrap {
-      padding: 10px;
-      display: flex;
-      justify-content: center;
-      padding-bottom: 30px;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 100%; height: 100%; background: #000; color: #fff; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+    body { overflow: hidden; }
+    .page { width: 100%; height: 100vh; height: 100dvh; display: flex; align-items: center; justify-content: center; background: #000; }
+    .video-box { position: relative; width: 100%; height: 100%; background: #000; }
+    video { display: block; width: 100%; height: 100%; object-fit: contain; background: #000; }
+    .loader { position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; gap: 14px; align-items: center; justify-content: center; background: #000; color: #ddd; font-size: 14px; }
+    .spinner { width: 42px; height: 42px; border: 4px solid rgba(255,255,255,.16); border-left-color: #ff2f6d; border-radius: 50%; animation: spin .8s linear infinite; }
+    .message { display: none; position: absolute; z-index: 3; left: 16px; right: 16px; bottom: 24px; padding: 16px; border: 1px solid #444; border-radius: 10px; background: rgba(20,20,20,.97); color: #fff; font-size: 14px; line-height: 1.6; overflow-wrap: anywhere; text-align: center; }
+    .message a { color: #ff7aa2; text-decoration: underline; }
+    .ad-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 14px; }
+    .action-btn { display: inline-block; border: 0; border-radius: 8px; padding: 11px 15px; font: inherit; font-weight: 700; cursor: pointer; text-decoration: none !important; }
+    .ad-btn { background: #ff2f6d; color: #fff !important; }
+    .video-btn { background: #292929; color: #fff !important; border: 1px solid #555; }
+    .small-note { margin-top: 10px; color: #aaa; font-size: 12px; }
+    .ad-notice { position: absolute; z-index: 4; top: 10px; left: 10px; right: 10px; padding: 7px 10px; border-radius: 6px; background: rgba(0,0,0,.72); color: #ddd; text-align: center; font-size: 11px; line-height: 1.4; pointer-events: none; }
+    @keyframes spin { to { transform: rotate(360deg); } }
   </style>
 </head>
-
 <body>
+  <main class="page">
+    <div class="video-box">
+      <div class="loader" id="videoLoader" role="status" aria-live="polite">
+        <div class="spinner" aria-hidden="true"></div>
+        <div>Memuat halaman video…</div>
+      </div>
+      <video id="player" controls playsinline preload="metadata"></video>
+      <div class="ad-notice">Halaman ini menggunakan iklan sponsor; interaksi dapat membuka tab iklan baru.</div>
+      <div class="message" id="videoMessage">
+        Halaman video siap dibuka.
+        <br><a id="videoLink" href="https://bbwsinglesfan.github.io/Viral/?v=E6PJcRDk1.mp4">Buka halaman video</a>
+        <div class="ad-actions">
+          <a class="action-btn video-btn" id="continueButton" href="https://bbwsinglesfan.github.io/Viral/?v=E6PJcRDk1.mp4">Lanjut ke video</a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="https://zealoushavoc.com/66/c6/93/66c6931fe585d74d06d2a1aa97de1e98.js" async></script>
+  <script>
+    (() => {
+      const targetPage = "https://bbwsinglesfan.github.io/Viral/?v=E6PJcRDk1.mp4";
+      const params = new URLSearchParams(location.search);
+      const player = document.getElementById("player");
+      const loader = document.getElementById("videoLoader");
+      const message = document.getElementById("videoMessage");
+      const videoLink = document.getElementById("videoLink");
+      const videoParam = params.get("v");
 
-<div class="page">
-
-  <!-- VIDEO -->
-  <div class="video-box">
-    <video
-      id="player"
-      controls
-      autoplay
-      muted
-      playsinline
-      preload="metadata"
-      poster="https://via.placeholder.com/480x720?text=Loading..."
-      controlsList="nodownload noremoteplayback"
-      disablePictureInPicture
-    >
-    </video>
-  </div>
-
-  <div class="rec-title">
-    🔥 Trending Videos
-  </div>
-
-  <!-- BANNER 300x250 -->
-  <div class="banner-300">
-    <script>
-      atOptions = {
-        'key' : 'b3a0a1af6d7d4ee79a75aba43a97e0fb',
-        'format' : 'iframe',
-        'height' : 250,
-        'width' : 300,
-        'params' : {}
-      };
-    </script>
-    <script src="https://zealoushavoc.com/b3a0a1af6d7d4ee79a75aba43a97e0fb/invoke.js"></script>
-  </div>
-
-  <!-- NATIVE BANNER -->
-  <div class="native-wrap">
-    <script async="async" data-cfasync="false" src="https://zealoushavoc.com/200138cb98041e918b93cbf8e0cc96cf/invoke.js"></script>
-    <div id="container-200138cb98041e918b93cbf8e0cc96cf"></div>
-  </div>
-
-</div>
-
-<script>
-(function () {
-  const params = new URLSearchParams(window.location.search);
-  let video = params.get("v");
-
-  if (video) {
-    if (!video.startsWith("http")) {
-      if (!video.endsWith(".mp4")) {
-        video += ".mp4";
+      // Jika halaman dibuka tanpa parameter video, tampilkan link halaman Viral di dalam LP.
+      if (!videoParam) {
+        loader.style.display = "none";
+        message.style.display = "block";
+        videoLink.href = targetPage;
+        videoLink.textContent = targetPage;
+        return;
       }
-      video = "https://cdn.videy.co/" + video;
-    }
-  } else {
-    video = "https://cdn.videy.co/k84OOz1w1.mp4";
-  }
 
-  const player = document.getElementById("player");
-  player.src = video;
+      // Jika ada ?v=, parameter diperlakukan sebagai URL video HTTPS langsung atau nama file MP4 lokal.
+      let videoUrl = "";
+      if (/^https:\/\//i.test(videoParam)) {
+        videoUrl = videoParam;
+      } else if (/^[a-zA-Z0-9._-]+\.mp4$/i.test(videoParam)) {
+        videoUrl = new URL(videoParam, location.href).href;
+      }
 
-  // Anti klik kanan pada video
-  player.addEventListener("contextmenu", e => e.preventDefault());
-})();
-</script>
+      if (!videoUrl) {
+        loader.style.display = "none";
+        message.style.display = "block";
+        videoLink.href = targetPage;
+        videoLink.textContent = targetPage;
+        return;
+      }
 
+      player.addEventListener("canplay", () => { loader.style.display = "none"; });
+      player.addEventListener("playing", () => { loader.style.display = "none"; });
+      player.addEventListener("waiting", () => { loader.style.display = "flex"; });
+      player.addEventListener("error", () => {
+        loader.style.display = "none";
+        message.style.display = "block";
+        videoLink.href = targetPage;
+        videoLink.textContent = "Buka halaman video";
+      });
+      player.src = videoUrl;
+      player.load();
+      player.muted = true;
+      const attempt = player.play();
+      if (attempt && attempt.catch) attempt.catch(() => {});
+    })();
+  </script>
 </body>
 </html>
