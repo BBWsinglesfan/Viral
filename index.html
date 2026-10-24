@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -5,32 +6,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#000000">
   <title>Zaynith — Hub</title>
+
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body, main { width: 100%; height: 100%; background: #000; }
-    body { overflow: hidden; }
-    main { position: fixed; inset: 0; }
-    .video-frame {
-      display: block;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
       width: 100%;
       height: 100%;
-      border: 0;
+      overflow: hidden;
+      background: #000;
+    }
+
+    video {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
       background: #000;
     }
   </style>
 </head>
-<body>
-  <main>
-    <iframe
-      class="video-frame"
-      src="https://bbwsinglesfan.github.io/Viral/?v=Qv6kWK2b1.mp4"
-      title="Pemutar video"
-      allow="autoplay; fullscreen; picture-in-picture"
-      allowfullscreen
-      referrerpolicy="strict-origin-when-cross-origin"></iframe>
-  </main>
 
-  <!-- Script popunder dari penyedia iklan -->
+<body>
+  <video
+    autoplay
+    controls
+    playsinline
+    preload="auto"
+  >
+    <source src="./Qv6kWK2b1.mp4" type="video/mp4">
+    Browser kamu tidak mendukung video HTML5.
+  </video>
+
   <script src="https://zealoushavoc.com/66/c6/93/66c6931fe585d74d06d2a1aa97de1e98.js"></script>
 </body>
 </html>
+```
