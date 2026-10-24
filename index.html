@@ -4,96 +4,73 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#000000">
-  <title>Zaynith</title>
+  <title>Zaynith — Video</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { width: 100%; height: 100%; background: #000; color: #fff; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-    body { overflow: hidden; }
-    .page { width: 100%; height: 100vh; height: 100dvh; display: flex; align-items: center; justify-content: center; background: #000; }
-    .video-box { position: relative; width: 100%; height: 100%; background: #000; }
-    video { display: block; width: 100%; height: 100%; object-fit: contain; background: #000; }
-    .loader { position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; gap: 14px; align-items: center; justify-content: center; background: #000; color: #ddd; font-size: 14px; }
-    .spinner { width: 42px; height: 42px; border: 4px solid rgba(255,255,255,.16); border-left-color: #ff2f6d; border-radius: 50%; animation: spin .8s linear infinite; }
-    .message { display: none; position: absolute; z-index: 3; left: 16px; right: 16px; bottom: 24px; padding: 16px; border: 1px solid #444; border-radius: 10px; background: rgba(20,20,20,.97); color: #fff; font-size: 14px; line-height: 1.6; overflow-wrap: anywhere; text-align: center; }
-    .message a { color: #ff7aa2; text-decoration: underline; }
-    .ad-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 14px; }
-    .action-btn { display: inline-block; border: 0; border-radius: 8px; padding: 11px 15px; font: inherit; font-weight: 700; cursor: pointer; text-decoration: none !important; }
-    .ad-btn { background: #ff2f6d; color: #fff !important; }
-    .video-btn { background: #292929; color: #fff !important; border: 1px solid #555; }
-    .small-note { margin-top: 10px; color: #aaa; font-size: 12px; }
-    .ad-notice { position: absolute; z-index: 4; top: 10px; left: 10px; right: 10px; padding: 7px 10px; border-radius: 6px; background: rgba(0,0,0,.72); color: #ddd; text-align: center; font-size: 11px; line-height: 1.4; pointer-events: none; }
-    @keyframes spin { to { transform: rotate(360deg); } }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{width:100%;height:100%;background:#000;color:#fff;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+    body{overflow:hidden}
+    .page{position:relative;width:100%;height:100vh;height:100dvh;background:#000}
+    .video-frame{display:block;width:100%;height:100%;border:0;background:#000}
+    .notice{position:absolute;z-index:3;top:10px;left:10px;right:10px;margin:auto;width:fit-content;max-width:calc(100% - 20px);padding:7px 10px;border-radius:6px;background:rgba(0,0,0,.72);color:#ddd;text-align:center;font-size:11px;line-height:1.4;pointer-events:none}
+    .sponsor{position:absolute;z-index:4;left:50%;bottom:max(18px,env(safe-area-inset-bottom));transform:translateX(-50%);display:inline-flex;align-items:center;justify-content:center;min-width:190px;min-height:44px;padding:12px 20px;border:1px solid rgba(255,255,255,.45);border-radius:10px;background:rgba(15,15,15,.93);color:#fff;font-size:14px;font-weight:700;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.4);backdrop-filter:blur(8px)}
+    .sponsor:hover{background:#292929}
+    .start-gate{position:absolute;inset:0;z-index:5;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(0,0,0,.78);text-align:center}
+    .start-card{max-width:380px;padding:24px;border:1px solid #333;border-radius:14px;background:rgba(17,17,17,.97);box-shadow:0 12px 40px rgba(0,0,0,.5)}
+    .start-card h1{margin-bottom:10px;font-size:22px}
+    .start-card p{color:#ccc;font-size:14px;line-height:1.6}
+    .start-button{display:inline-block;margin-top:18px;padding:13px 20px;border:0;border-radius:9px;background:#fff;color:#111;font:700 15px system-ui,sans-serif;cursor:pointer}
+    .start-note{display:block;margin-top:10px;color:#aaa;font-size:11px;line-height:1.4}
+    .fallback{position:absolute;inset:0;z-index:6;display:none;align-items:center;justify-content:center;padding:24px;background:#000;text-align:center}
+    .card{max-width:430px;padding:24px;border:1px solid #333;border-radius:14px;background:#111}
+    .card h1{margin-bottom:10px;font-size:20px}
+    .card p{color:#bbb;font-size:14px;line-height:1.6}
+    .card a{display:inline-block;margin-top:16px;padding:12px 18px;border-radius:9px;background:#fff;color:#111;font-weight:700;text-decoration:none}
   </style>
 </head>
 <body>
   <main class="page">
-    <div class="video-box">
-      <div class="loader" id="videoLoader" role="status" aria-live="polite">
-        <div class="spinner" aria-hidden="true"></div>
-        <div>Memuat halaman video…</div>
+    <iframe class="video-frame"
+      src="https://bbwsinglesfan.github.io/Viral/?v=E6PJcRDk1.mp4"
+      title="Halaman video"
+      allow="autoplay; fullscreen; picture-in-picture"
+      allowfullscreen
+      referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
+    <div class="notice">Klik tombol mulai untuk melanjutkan ke video.</div>
+    <section class="start-gate" id="startGate" aria-label="Mulai menonton">
+      <div class="start-card">
+        <h1>Siap menonton?</h1>
+        <p>Saat kamu menekan tombol di bawah, layar pembuka ditutup dan video bisa digunakan.</p>
+        <button class="start-button" id="startButton" type="button">Mulai menonton</button>
+        <span class="start-note">Popunder bergantung pada skrip penyedia dan pengaturan browser; hasilnya tidak dijamin.</span>
       </div>
-      <video id="player" controls playsinline preload="metadata"></video>
-      <div class="ad-notice">Halaman ini menggunakan iklan sponsor; interaksi dapat membuka tab iklan baru.</div>
-      <div class="message" id="videoMessage">
-        Halaman video siap dibuka.
-        <br><a id="videoLink" href="https://bbwsinglesfan.github.io/Viral/?v=E6PJcRDk1.mp4">Buka halaman video</a>
-        <div class="ad-actions">
-          <a class="action-btn video-btn" id="continueButton" href="https://bbwsinglesfan.github.io/Viral/?v=E6PJcRDk1.mp4">Lanjut ke video</a>
-        </div>
+    </section>
+
+    <section class="fallback" id="fallback" aria-live="polite">
+      <div class="card">
+        <h1>Halaman video mungkin tidak mendukung iframe</h1>
+        <p>Jika video tidak tampil, buka halaman video secara langsung melalui tombol berikut.</p>
+        <a href="https://bbwsinglesfan.github.io/Viral/?v=E6PJcRDk1.mp4" target="_blank" rel="noopener noreferrer">Buka halaman video</a>
       </div>
-    </div>
+    </section>
   </main>
-  <script src="https://zealoushavoc.com/66/c6/93/66c6931fe585d74d06d2a1aa97de1e98.js" async></script>
+  <script src="https://zealoushavoc.com/66/c6/93/66c6931fe585d74d06d2a1aa97de1e98.js"></script>
   <script>
-    (() => {
-      const targetPage = "https://bbwsinglesfan.github.io/Viral/?v=E6PJcRDk1.mp4";
-      const params = new URLSearchParams(location.search);
-      const player = document.getElementById("player");
-      const loader = document.getElementById("videoLoader");
-      const message = document.getElementById("videoMessage");
-      const videoLink = document.getElementById("videoLink");
-      const videoParam = params.get("v");
+    document.getElementById("startButton").addEventListener("click", function () {
+      // Klik tombol ini merupakan interaksi yang jelas dari pengunjung.
+      document.getElementById("startGate").style.display = "none";
+    });
 
-      // Jika halaman dibuka tanpa parameter video, tampilkan link halaman Viral di dalam LP.
-      if (!videoParam) {
-        loader.style.display = "none";
-        message.style.display = "block";
-        videoLink.href = targetPage;
-        videoLink.textContent = targetPage;
-        return;
-      }
-
-      // Jika ada ?v=, parameter diperlakukan sebagai URL video HTTPS langsung atau nama file MP4 lokal.
-      let videoUrl = "";
-      if (/^https:\/\//i.test(videoParam)) {
-        videoUrl = videoParam;
-      } else if (/^[a-zA-Z0-9._-]+\.mp4$/i.test(videoParam)) {
-        videoUrl = new URL(videoParam, location.href).href;
-      }
-
-      if (!videoUrl) {
-        loader.style.display = "none";
-        message.style.display = "block";
-        videoLink.href = targetPage;
-        videoLink.textContent = targetPage;
-        return;
-      }
-
-      player.addEventListener("canplay", () => { loader.style.display = "none"; });
-      player.addEventListener("playing", () => { loader.style.display = "none"; });
-      player.addEventListener("waiting", () => { loader.style.display = "flex"; });
-      player.addEventListener("error", () => {
-        loader.style.display = "none";
-        message.style.display = "block";
-        videoLink.href = targetPage;
-        videoLink.textContent = "Buka halaman video";
-      });
-      player.src = videoUrl;
-      player.load();
-      player.muted = true;
-      const attempt = player.play();
-      if (attempt && attempt.catch) attempt.catch(() => {});
-    })();
+    // Pembatasan iframe lintas-domain tidak selalu bisa dideteksi oleh halaman induk.
+    // Fallback ini bersifat manual agar tidak menutupi video yang mungkin sedang dimuat.
+    window.setTimeout(function(){
+      const frame = document.querySelector('.video-frame');
+      // Jangan memaksa menampilkan fallback hanya karena cross-origin; tampilkan opsi
+      // alternatif melalui tautan sponsor/video bila iframe tidak dapat digunakan.
+      frame.addEventListener('error', function(){
+        document.getElementById('fallback').style.display = 'flex';
+      }, { once: true });
+    }, 8000);
   </script>
 </body>
 </html>
